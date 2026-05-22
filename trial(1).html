@@ -1,0 +1,449 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Smart Fever & Symptom Tracker</title>
+
+  <script src="trial(1)javascript.js"></script>
+
+  <link rel="stylesheet" href="trial(1)css.css">
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      🩺 Smart Fever Tracker
+    </div>
+
+    <nav>
+
+      <ul>
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#login">Login</a></li>
+
+        <li><a href="#tracker">Symptom Tracker</a></li>
+
+        <li><a href="#dashboard">Dashboard</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+
+      <h1>
+        Smart Fever & Symptom Tracker for Community Use
+      </h1>
+
+      <p>
+        Monitor symptoms early, detect warning signs,
+        and support healthcare monitoring for patients
+        and nurses.
+      </p>
+
+      <a href="#login" class="start-btn">
+        Start Monitoring
+      </a>
+
+    </div>
+
+    <div class="hero-image">
+
+      <img src="https://cdn-icons-png.flaticon.com/512/2785/2785819.png">
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <h2>Patient Symptom Recording System</h2>
+
+    <p>
+      The system allows patients to record daily symptoms
+      such as body temperature, pain level, headache,
+      rashes, vomiting, fatigue, and other warning signs
+      of infectious diseases.
+    </p>
+
+  </section>
+
+  <!-- LOGIN / REGISTER -->
+
+  <section class="login-section" id="login">
+
+    <div class="login-container">
+
+      <!-- LOGIN -->
+
+      <div id="loginForm">
+
+        <h2>Login</h2>
+
+        <input type="text" id="loginUsername" placeholder="Username">
+
+        <input type="password" id="loginPassword" placeholder="Password">
+
+        <select id="loginRole">
+
+          <option value="patient">Patient</option>
+
+          <option value="nurse">Nurse / Healthcare Worker</option>
+
+        </select>
+
+        <button onclick="loginUser()">
+          Login
+        </button>
+
+        <p>
+          No account yet?
+          <span onclick="showRegister()">
+            Register here
+          </span>
+        </p>
+
+      </div>
+
+      <!-- REGISTER -->
+
+      <div id="registerForm" class="hidden">
+
+        <h2>Register</h2>
+
+        <input type="text" id="registerUsername" placeholder="Username">
+
+        <input type="password" id="registerPassword" placeholder="Password">
+
+        <select id="registerRole">
+
+          <option value="patient">Patient</option>
+
+          <option value="nurse">Nurse / Healthcare Worker</option>
+
+        </select>
+
+        <button onclick="registerUser()">
+          Register
+        </button>
+
+        <p>
+          Already have an account?
+          <span onclick="showLogin()">
+            Login here
+          </span>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TRACKER -->
+
+  <section class="tracker-section hidden" id="tracker">
+
+    <h2>Daily Symptom Tracker</h2>
+
+    <div class="tracker-container">
+
+      <!-- PATIENT FORM -->
+
+      <div class="tracker-form" id="patientOnly">
+
+        <h3>Patient Symptom Recording</h3>
+
+        <input type="text" id="patientName" placeholder="Patient Name">
+
+        <label>Date</label>
+        <input type="date" id="date">
+
+        <label>Time</label>
+        <input type="time" id="time">
+
+        <label>Body Temperature (°C)</label>
+        <input type="number" id="temperature">
+
+        <label>Pain Level (1-10)</label>
+        <input type="number" id="pain">
+
+        <label>Headache</label>
+        <select id="headache">
+
+          <option>None</option>
+          <option>Mild</option>
+          <option>Moderate</option>
+          <option>Severe</option>
+
+        </select>
+
+        <label>Rashes</label>
+        <select id="rashes">
+
+          <option>None</option>
+          <option>Mild</option>
+          <option>Moderate</option>
+          <option>Severe</option>
+
+        </select>
+
+        <label>Vomiting</label>
+        <select id="vomiting">
+
+          <option>None</option>
+          <option>1-2 Times</option>
+          <option>3-5 Times</option>
+          <option>Frequent</option>
+
+        </select>
+
+        <label>Fatigue</label>
+        <select id="fatigue">
+
+          <option>None</option>
+          <option>Mild</option>
+          <option>Moderate</option>
+          <option>Extreme Weakness</option>
+
+        </select>
+
+        <label>Other Warning Signs</label>
+        <textarea id="warningSigns"></textarea>
+
+        <button onclick="saveRecord()">
+          Save Record
+        </button>
+
+      </div>
+
+      <!-- HEALTH EDUCATION -->
+
+<div class="education-box">
+
+  <h3>📚 Health Education & Self-Care Guidance</h3>
+
+  <div class="education-card">
+
+    <h4>🦟 Dengue Prevention</h4>
+
+    <p>
+      Keep surroundings clean and remove stagnant water
+      to prevent mosquito breeding.
+    </p>
+
+  </div>
+
+  <div class="education-card">
+
+    <h4>💧 Hydration Reminder</h4>
+
+    <p>
+      Drink plenty of water regularly to prevent
+      dehydration during fever or illness.
+    </p>
+
+  </div>
+
+  <div class="education-card">
+
+    <h4>🛌 Rest and Recovery</h4>
+
+    <p>
+      Get enough sleep and rest to help the body
+      recover from infection and fatigue.
+    </p>
+
+  </div>
+
+  <div class="education-card">
+
+    <h4>🌡 Symptom Monitoring</h4>
+
+    <p>
+      Monitor body temperature and worsening symptoms
+      daily for early detection of complications.
+    </p>
+
+  </div>
+
+  <div class="education-card warning-card">
+
+    <h4>⚠ Warning Signs</h4>
+
+    <ul>
+
+      <li>Persistent high fever</li>
+
+      <li>Severe headache</li>
+
+      <li>Frequent vomiting</li>
+
+      <li>Difficulty breathing</li>
+
+      <li>Extreme weakness</li>
+
+      <li>Worsening rashes</li>
+
+    </ul>
+
+    <p>
+      Seek professional healthcare immediately if
+      these symptoms become severe.
+    </p>
+
+  </div>
+
+</div>
+
+      <!-- NURSE DASHBOARD -->
+
+      <div class="history-box" id="dashboard">
+
+        <h3>Nurse Monitoring Dashboard</h3>
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Name</th>
+
+              <th>Date</th>
+
+              <th>Time</th>
+
+              <th>Temp</th>
+
+              <th>Pain</th>
+
+              <th>Status</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="historyTable">
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="features">
+
+    <h2>System Features</h2>
+
+    <div class="feature-container">
+
+      <div class="feature-box">
+
+        <h3>📊 Nurse Monitoring Dashboard</h3>
+
+        <p>
+          Nurses can monitor multiple patients and
+          identify high-risk cases.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <h3>🚑 Referral Recommendation</h3>
+
+        <p>
+          The system recommends clinic consultation
+          or emergency referral based on symptoms.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <h3>🔐 User Management</h3>
+
+        <p>
+          Secure login and account management for
+          patients and nurses.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <h3>💾 Data Handling</h3>
+
+        <p>
+          Stores patient symptom records for monitoring
+          and follow-up care.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact-section" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>Email: smartfevertracker@gmail.com</p>
+
+    <p>Phone: 0912-345-6789</p>
+
+    <p>Community Health Center</p>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 Smart Fever & Symptom Tracker
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
